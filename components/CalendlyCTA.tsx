@@ -18,8 +18,8 @@ export default function CalendlyCTA() {
               Ready to Bring Your Vision to Life?
             </h2>
             <p className='text-xl text-secondary max-w-2xl mx-auto'>
-              Let's discuss your project and create something extraordinary together. Book a free
-              consultation call to get started.
+              Let&apos;s discuss your project and create something extraordinary together. Book a
+              free consultation call to get started.
             </p>
           </div>
 

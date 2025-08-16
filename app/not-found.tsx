@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 export default function NotFound() {
   const [mounted, setMounted] = useState(false);
   const [countdown, setCountdown] = useState(10);
+
   const router = useRouter();
 
   useEffect(() => {

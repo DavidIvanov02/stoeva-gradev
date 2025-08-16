@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback } from 'react';
+
 import { useLoading } from '@/components/LoadingProvider';
 
 /**
@@ -16,7 +17,7 @@ export const useLoadingHelpers = () => {
    */
   const withLoading = useCallback(
     async (
-      asyncFn: () => Promise<any>,
+      asyncFn: () => Promise<unknown>,
       options: {
         minDuration?: number; // Minimum loading duration in ms
         showLoading?: boolean; // Whether to show loading (default: true)
@@ -67,7 +68,7 @@ export const useLoadingHelpers = () => {
    * Helper for API calls
    */
   const handleApiCall = useCallback(
-    async (apiFn: () => Promise<any>) => {
+    async (apiFn: () => Promise<unknown>) => {
       return withLoading(apiFn, { minDuration: 300 });
     },
     [withLoading]
