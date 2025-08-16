@@ -6,7 +6,6 @@ export default function CalendlyCTA() {
     const [isHovered, setIsHovered] = useState(false);
 
     const openCalendly = () => {
-        // Replace with your actual Calendly URL
         window.open("https://calendly.com/your-calendly-link", "_blank");
     };
 
