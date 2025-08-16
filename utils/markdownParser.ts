@@ -1,7 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+
 import matter from 'gray-matter';
 import { marked } from 'marked';
+
 import type { BlogPost, BlogPostMetadata } from '@/types/blog';
 
 // Configure marked for better HTML output
@@ -26,7 +28,7 @@ export function getAllPostSlugs(): string[] {
   try {
     const entries = fs.readdirSync(postsDirectory, { withFileTypes: true });
     return entries.filter(entry => entry.isDirectory()).map(entry => entry.name);
-  } catch (error) {
+  } catch {
     console.warn('Posts directory not found, returning empty array');
     return [];
   }
