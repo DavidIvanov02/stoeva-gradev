@@ -1,7 +1,8 @@
 "use client";
 
-import { useLoading } from './LoadingProvider';
 import { useCallback } from 'react';
+
+import { useLoading } from './LoadingProvider';
 
 /**
  * Custom hook that provides loading helpers for common scenarios
@@ -15,88 +16,88 @@ export const useLoadingHelpers = () => {
      * @param options - Options for loading behavior
      */
     const withLoading = useCallback(
-        async<T>(
-            asyncFn: () => Promise<T>,
+        async (
+            asyncFn: () => Promise<any>,
             options: {
                 minDuration?: number; // Minimum loading duration in ms
                 showLoading?: boolean; // Whether to show loading (default: true)
             } = {}
-        ): Promise<T> => {
-    const { minDuration = 0, showLoading = true } = options;
+        ) => {
+            const { minDuration = 0, showLoading = true } = options;
 
-    if (showLoading) {
-        startLoading();
-    }
-
-    const startTime = Date.now();
-
-    try {
-        const result = await asyncFn();
-
-        // Ensure minimum loading duration
-        if (minDuration > 0) {
-            const elapsedTime = Date.now() - startTime;
-            const remainingTime = minDuration - elapsedTime;
-
-            if (remainingTime > 0) {
-                await new Promise(resolve => setTimeout(resolve, remainingTime));
+            if (showLoading) {
+                startLoading();
             }
-        }
 
-        return result;
-    } finally {
-        if (showLoading) {
-            stopLoading();
-        }
-    }
-},
-[startLoading, stopLoading]
-  );
+            const startTime = Date.now();
 
-/**
- * Helper for form submissions
- */
-const handleFormSubmit = useCallback(
-    async (submitFn: () => Promise<void>) => {
-        return withLoading(submitFn, { minDuration: 500 });
-    },
-    [withLoading]
-);
+            try {
+                const result = await asyncFn();
 
-/**
- * Helper for API calls
- */
-const handleApiCall = useCallback(
-    async<T>(apiFn: () => Promise<T>) => {
-    return withLoading(apiFn, { minDuration: 300 });
-},
-[withLoading]
-  );
+                // Ensure minimum loading duration
+                if (minDuration > 0) {
+                    const elapsedTime = Date.now() - startTime;
+                    const remainingTime = minDuration - elapsedTime;
 
-/**
- * Helper for navigation with loading
- */
-const handleNavigation = useCallback(
-    async (navigationFn: () => Promise<void> | void) => {
-        startLoading();
-        try {
-            await navigationFn();
-        } finally {
-            // Let the LoadingProvider handle stopping the loading for navigation
-            // It will stop automatically when the route changes
-        }
-    },
-    [startLoading]
-);
+                    if (remainingTime > 0) {
+                        await new Promise(resolve => setTimeout(resolve, remainingTime));
+                    }
+                }
 
-return {
-    isLoading,
-    setLoading,
-    startLoading,
-    stopLoading,
-    withLoading,
-    handleFormSubmit,
-    handleApiCall,
-    handleNavigation,
-};
+                return result;
+            } finally {
+                if (showLoading) {
+                    stopLoading();
+                }
+            }
+        },
+        [startLoading, stopLoading]
+    );
+
+    /**
+     * Helper for form submissions
+     */
+    const handleFormSubmit = useCallback(
+        async (submitFn: () => Promise<void>) => {
+            return withLoading(submitFn, { minDuration: 500 });
+        },
+        [withLoading]
+    );
+
+    /**
+     * Helper for API calls
+     */
+    const handleApiCall = useCallback(
+        async (apiFn: () => Promise<any>) => {
+            return withLoading(apiFn, { minDuration: 300 });
+        },
+        [withLoading]
+    );
+
+    /**
+     * Helper for navigation with loading
+     */
+    const handleNavigation = useCallback(
+        async (navigationFn: () => Promise<void> | void) => {
+            startLoading();
+            try {
+                await navigationFn();
+            } finally {
+                // Let the LoadingProvider handle stopping the loading for navigation
+                // It will stop automatically when the route changes
+            }
+        },
+        [startLoading]
+    );
+
+    return {
+        isLoading,
+        setLoading,
+        startLoading,
+        stopLoading,
+        withLoading,
+        handleFormSubmit,
+        handleApiCall,
+        handleNavigation,
+    };
 }; 
