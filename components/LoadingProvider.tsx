@@ -1,68 +1,69 @@
-"use client";
+'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+
 import { usePathname } from 'next/navigation';
 
 interface LoadingContextType {
-    isLoading: boolean;
-    setLoading: (loading: boolean) => void;
-    startLoading: () => void;
-    stopLoading: () => void;
+  isLoading: boolean;
+  setLoading: (loading: boolean) => void;
+  startLoading: () => void;
+  stopLoading: () => void;
 }
 
 const LoadingContext = createContext<LoadingContextType | undefined>(undefined);
 
 export const useLoading = () => {
-    const context = useContext(LoadingContext);
-    if (context === undefined) {
-        throw new Error('useLoading must be used within a LoadingProvider');
-    }
-    return context;
+  const context = useContext(LoadingContext);
+  if (context === undefined) {
+    throw new Error('useLoading must be used within a LoadingProvider');
+  }
+  return context;
 };
 
 interface LoadingProviderProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) => {
-    const [isLoading, setIsLoading] = useState(false);
-    const [loadingTimeouts, setLoadingTimeouts] = useState<NodeJS.Timeout[]>([]);
-    const pathname = usePathname();
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadingTimeouts, setLoadingTimeouts] = useState<NodeJS.Timeout[]>([]);
+  const pathname = usePathname();
 
-    useEffect(() => {
-        startLoading();
+  useEffect(() => {
+    startLoading();
 
-        const timeout = setTimeout(() => {
-            stopLoading();
-        }, 800);
+    const timeout = setTimeout(() => {
+      stopLoading();
+    }, 800);
 
-        return () => {
-            clearTimeout(timeout);
-        };
-    }, [pathname]);
-
-    const startLoading = () => {
-        setIsLoading(true);
+    return () => {
+      clearTimeout(timeout);
     };
+  }, [pathname]);
 
-    const stopLoading = () => {
-        loadingTimeouts.forEach(timeout => clearTimeout(timeout));
-        setLoadingTimeouts([]);
+  const startLoading = () => {
+    setIsLoading(true);
+  };
 
-        setIsLoading(false);
-    };
+  const stopLoading = () => {
+    loadingTimeouts.forEach(timeout => clearTimeout(timeout));
+    setLoadingTimeouts([]);
 
-    const setLoading = (loading: boolean) => {
-        if (loading) {
-            startLoading();
-        } else {
-            stopLoading();
-        }
-    };
+    setIsLoading(false);
+  };
 
-    return (
-        <LoadingContext.Provider value={{ isLoading, setLoading, startLoading, stopLoading }}>
-            {children}
-        </LoadingContext.Provider>
-    );
-}; 
+  const setLoading = (loading: boolean) => {
+    if (loading) {
+      startLoading();
+    } else {
+      stopLoading();
+    }
+  };
+
+  return (
+    <LoadingContext.Provider value={{ isLoading, setLoading, startLoading, stopLoading }}>
+      {children}
+    </LoadingContext.Provider>
+  );
+};

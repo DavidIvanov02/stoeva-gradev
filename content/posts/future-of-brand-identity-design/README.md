@@ -1,12 +1,12 @@
 ---
-title: "The Future of Brand Identity Design"
-excerpt: "Exploring emerging trends and technologies that are reshaping how we approach brand identity design in the digital age."
-author: "Stoeva Gradev"
-date: "2024-01-15"
-readTime: "5 min read"
-category: "Branding"
-tags: ["Design", "Branding", "Trends", "Digital"]
-image: "/api/placeholder/800/400"
+title: 'The Future of Brand Identity Design'
+excerpt: 'Exploring emerging trends and technologies that are reshaping how we approach brand identity design in the digital age.'
+author: 'Stoeva Gradev'
+date: '2024-01-15'
+readTime: '5 min read'
+category: 'Branding'
+tags: ['Design', 'Branding', 'Trends', 'Digital']
+image: '/api/placeholder/800/400'
 featured: true
 ---
 

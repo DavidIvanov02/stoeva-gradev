@@ -1,12 +1,12 @@
 ---
-title: "10 Web Design Principles for Better User Experience"
-excerpt: "Essential principles every designer should know to create websites that not only look great but also provide exceptional user experiences."
-author: "Stoeva Gradev"
-date: "2024-01-10"
-readTime: "8 min read"
-category: "Web Design"
-tags: ["UX", "Web Design", "Principles", "User Experience"]
-image: "/api/placeholder/800/400"
+title: '10 Web Design Principles for Better User Experience'
+excerpt: 'Essential principles every designer should know to create websites that not only look great but also provide exceptional user experiences.'
+author: 'Stoeva Gradev'
+date: '2024-01-10'
+readTime: '8 min read'
+category: 'Web Design'
+tags: ['UX', 'Web Design', 'Principles', 'User Experience']
+image: '/api/placeholder/800/400'
 featured: true
 ---
 
