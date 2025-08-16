@@ -90,15 +90,13 @@ export default function CookieBanner() {
   return (
     <>
       <div
-        className={`fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-opacity duration-300 ${
-          isAnimating ? 'opacity-0' : 'opacity-100'
-        }`}
+        className={`fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'
+          }`}
         onClick={() => !showPreferences && closeBanner()}
       />
       <div
-        className={`fixed bottom-0 left-0 right-0 z-50 p-4 transition-all duration-500 ${
-          isAnimating ? 'translate-y-full opacity-0' : 'translate-y-0 opacity-100'
-        }`}
+        className={`fixed bottom-0 left-0 right-0 z-50 p-4 transition-all duration-500 ${isAnimating ? 'translate-y-full opacity-0' : 'translate-y-0 opacity-100'
+          }`}
       >
         <div className='max-w-6xl mx-auto'>
           <div className='bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 dark:border-slate-700/50 overflow-hidden'>
@@ -129,7 +127,7 @@ export default function CookieBanner() {
                         </h3>
                         <p className='text-gray-600 dark:text-gray-300 leading-relaxed'>
                           We use cookies to enhance your browsing experience, serve personalized
-                          content, and analyze our traffic. By clicking "Accept All", you consent to
+                          content, and analyze our traffic. By clicking &ldquo;Accept All&rdquo;, you consent to
                           our use of cookies. You can customize your preferences or learn more in
                           our{' '}
                           <Link
@@ -232,14 +230,12 @@ export default function CookieBanner() {
                     </div>
                     <button
                       onClick={() => togglePreference('analytics')}
-                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                        preferences.analytics ? 'bg-blue-600' : 'bg-gray-300 dark:bg-gray-600'
-                      }`}
+                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${preferences.analytics ? 'bg-blue-600' : 'bg-gray-300 dark:bg-gray-600'
+                        }`}
                     >
                       <span
-                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                          preferences.analytics ? 'translate-x-6' : 'translate-x-1'
-                        }`}
+                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${preferences.analytics ? 'translate-x-6' : 'translate-x-1'
+                          }`}
                       />
                     </button>
                   </div>
@@ -260,14 +256,12 @@ export default function CookieBanner() {
                     </div>
                     <button
                       onClick={() => togglePreference('marketing')}
-                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                        preferences.marketing ? 'bg-purple-600' : 'bg-gray-300 dark:bg-gray-600'
-                      }`}
+                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${preferences.marketing ? 'bg-purple-600' : 'bg-gray-300 dark:bg-gray-600'
+                        }`}
                     >
                       <span
-                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                          preferences.marketing ? 'translate-x-6' : 'translate-x-1'
-                        }`}
+                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${preferences.marketing ? 'translate-x-6' : 'translate-x-1'
+                          }`}
                       />
                     </button>
                   </div>
@@ -288,14 +282,12 @@ export default function CookieBanner() {
                     </div>
                     <button
                       onClick={() => togglePreference('functional')}
-                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                        preferences.functional ? 'bg-emerald-600' : 'bg-gray-300 dark:bg-gray-600'
-                      }`}
+                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${preferences.functional ? 'bg-emerald-600' : 'bg-gray-300 dark:bg-gray-600'
+                        }`}
                     >
                       <span
-                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                          preferences.functional ? 'translate-x-6' : 'translate-x-1'
-                        }`}
+                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${preferences.functional ? 'translate-x-6' : 'translate-x-1'
+                          }`}
                       />
                     </button>
                   </div>

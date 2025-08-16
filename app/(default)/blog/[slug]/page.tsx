@@ -4,9 +4,9 @@ import { notFound } from 'next/navigation';
 import { getPostBySlug, getRelatedPosts, getAllPostSlugs } from '@/utils/markdownParser';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Generate static params for all blog posts
@@ -18,14 +18,15 @@ export function generateStaticParams() {
   }));
 }
 
-export default function BlogPost({ params }: BlogPostPageProps) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPost({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
   }
 
-  const relatedPosts = getRelatedPosts(params.slug, post.category, 3);
+  const relatedPosts = getRelatedPosts(slug, post.category, 3);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);

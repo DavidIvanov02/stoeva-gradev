@@ -80,7 +80,7 @@ export default function Hero() {
               <p
                 className={`text-xl md:text-2xl text-secondary leading-relaxed max-w-2xl transition-all duration-1200 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               >
-                Crafting extraordinary digital experiences that push boundaries and redefine what's
+                Crafting extraordinary digital experiences that push boundaries and redefine what&apos;s
                 possible in modern design.
               </p>
 

@@ -4,14 +4,16 @@ import { useState } from 'react';
 
 import { useTheme } from '@/components/ThemeProvider';
 
+type ThemeValue = 'light' | 'dark' | 'system';
+
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
   const themes = [
-    { value: 'light', label: 'Light', icon: '☀️' },
-    { value: 'dark', label: 'Dark', icon: '🌙' },
-    { value: 'system', label: 'System', icon: '💻' },
+    { value: 'light' as ThemeValue, label: 'Light', icon: '☀️' },
+    { value: 'dark' as ThemeValue, label: 'Dark', icon: '🌙' },
+    { value: 'system' as ThemeValue, label: 'System', icon: '💻' },
   ];
 
   const currentTheme = themes.find(t => t.value === theme) || themes[2];
@@ -40,7 +42,7 @@ export default function ThemeToggle() {
             <button
               key={themeOption.value}
               onClick={() => {
-                setTheme(themeOption.value as any);
+                setTheme(themeOption.value);
                 setIsOpen(false);
               }}
               className={`w-full flex items-center space-x-2 px-3 py-2 text-left hover:bg-muted transition-colors first:rounded-t-lg last:rounded-b-lg ${theme === themeOption.value ? 'bg-primary/10 text-primary' : 'text-foreground'

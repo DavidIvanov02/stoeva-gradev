@@ -1,11 +1,12 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { getProjectBySlug, getAllProjectSlugs } from '@/utils/markdownParser';
 
 interface ProjectPageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 export async function generateStaticParams() {
@@ -15,8 +16,9 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-    const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+    const { slug } = await params;
+    const project = getProjectBySlug(slug);
 
     if (!project) {
         notFound();
@@ -120,18 +122,18 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                         Let&apos;s work together to bring your vision to life with exceptional design solutions.
                     </p>
                     <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-                        <a
+                        <Link
                             href='/contact'
                             className='inline-flex items-center px-8 py-3 bg-white text-primary font-medium rounded-lg hover:bg-white/90 transition-all duration-300 hover-lift'
                         >
                             Start Your Project
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href='/portfolio'
                             className='inline-flex items-center px-8 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-primary transition-all duration-300'
                         >
                             View All Projects
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
