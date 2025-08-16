@@ -15,20 +15,20 @@ export default function CookieBanner() {
     const [showPreferences, setShowPreferences] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
     const [preferences, setPreferences] = useState<CookiePreferences>({
-        necessary: true, // Always true, can't be disabled
+        necessary: true,
         analytics: false,
         marketing: false,
         functional: false,
     });
 
     useEffect(() => {
-        // Check if user has already made a choice
         const cookieConsent = localStorage.getItem('cookieConsent');
+
         if (!cookieConsent) {
-            // Delay showing banner for better UX
             const timer = setTimeout(() => {
                 setIsVisible(true);
             }, 1500);
+
             return () => clearTimeout(timer);
         }
     }, []);
@@ -40,6 +40,7 @@ export default function CookieBanner() {
             marketing: true,
             functional: true,
         };
+
         saveCookiePreferences(allAccepted);
         closeBanner();
     };
@@ -56,6 +57,7 @@ export default function CookieBanner() {
             marketing: false,
             functional: false,
         };
+
         saveCookiePreferences(onlyNecessary);
         closeBanner();
     };
@@ -63,9 +65,6 @@ export default function CookieBanner() {
     const saveCookiePreferences = (prefs: CookiePreferences) => {
         localStorage.setItem('cookieConsent', JSON.stringify(prefs));
         localStorage.setItem('cookieConsentDate', new Date().toISOString());
-
-        // Here you would typically integrate with your analytics/tracking services
-        console.log('Cookie preferences saved:', prefs);
     };
 
     const closeBanner = () => {
@@ -77,7 +76,8 @@ export default function CookieBanner() {
     };
 
     const togglePreference = (key: keyof CookiePreferences) => {
-        if (key === 'necessary') return; // Can't disable necessary cookies
+        if (key === 'necessary') return;
+
         setPreferences(prev => ({
             ...prev,
             [key]: !prev[key]
@@ -88,27 +88,20 @@ export default function CookieBanner() {
 
     return (
         <>
-            {/* Backdrop */}
             <div
                 className={`fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'
                     }`}
                 onClick={() => !showPreferences && closeBanner()}
             />
-
-            {/* Cookie Banner */}
             <div className={`fixed bottom-0 left-0 right-0 z-50 p-4 transition-all duration-500 ${isAnimating ? 'translate-y-full opacity-0' : 'translate-y-0 opacity-100'
                 }`}>
                 <div className="max-w-6xl mx-auto">
                     <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 dark:border-slate-700/50 overflow-hidden">
-
                         {!showPreferences ? (
-                            // Main Banner
                             <div className="p-6 md:p-8">
                                 <div className="flex flex-col lg:flex-row lg:items-center gap-6">
-                                    {/* Icon and Content */}
                                     <div className="flex-1">
                                         <div className="flex items-start gap-4">
-                                            {/* Cookie Icon */}
                                             <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
                                                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -130,7 +123,6 @@ export default function CookieBanner() {
                                         </div>
                                     </div>
 
-                                    {/* Action Buttons */}
                                     <div className="flex flex-col sm:flex-row gap-3 lg:flex-shrink-0">
                                         <button
                                             onClick={() => setShowPreferences(true)}
@@ -154,7 +146,6 @@ export default function CookieBanner() {
                                 </div>
                             </div>
                         ) : (
-                            // Preferences Panel
                             <div className="p-6 md:p-8">
                                 <div className="mb-6">
                                     <div className="flex items-center justify-between mb-4">
@@ -175,9 +166,7 @@ export default function CookieBanner() {
                                     </p>
                                 </div>
 
-                                {/* Cookie Categories */}
                                 <div className="space-y-4 mb-6">
-                                    {/* Necessary Cookies */}
                                     <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-slate-800/50 rounded-xl">
                                         <div className="flex-1">
                                             <div className="flex items-center gap-3 mb-2">
@@ -193,7 +182,6 @@ export default function CookieBanner() {
                                         </div>
                                     </div>
 
-                                    {/* Analytics Cookies */}
                                     <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-slate-800/50 rounded-xl">
                                         <div className="flex-1">
                                             <div className="flex items-center gap-3 mb-2">
@@ -216,7 +204,6 @@ export default function CookieBanner() {
                                         </button>
                                     </div>
 
-                                    {/* Marketing Cookies */}
                                     <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-slate-800/50 rounded-xl">
                                         <div className="flex-1">
                                             <div className="flex items-center gap-3 mb-2">
@@ -239,7 +226,6 @@ export default function CookieBanner() {
                                         </button>
                                     </div>
 
-                                    {/* Functional Cookies */}
                                     <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-slate-800/50 rounded-xl">
                                         <div className="flex-1">
                                             <div className="flex items-center gap-3 mb-2">
@@ -263,7 +249,6 @@ export default function CookieBanner() {
                                     </div>
                                 </div>
 
-                                {/* Action Buttons */}
                                 <div className="flex flex-col sm:flex-row gap-3 justify-end">
                                     <button
                                         onClick={handleRejectAll}

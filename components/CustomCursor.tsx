@@ -17,17 +17,14 @@ export default function CustomCursor() {
         let ringX = 0;
         let ringY = 0;
 
-        // Mouse move handler
         const handleMouseMove = (e: MouseEvent) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
 
-            // Update dot position immediately
             dot.style.left = `${mouseX - 4}px`;
             dot.style.top = `${mouseY - 4}px`;
         };
 
-        // Smooth ring animation
         const animateRing = () => {
             const speed = 0.15;
             ringX += (mouseX - ringX) * speed;
@@ -39,32 +36,26 @@ export default function CustomCursor() {
             requestAnimationFrame(animateRing);
         };
 
-        // Mouse down handler
         const handleMouseDown = () => {
             ring.classList.add('click');
         };
 
-        // Mouse up handler
         const handleMouseUp = () => {
             ring.classList.remove('click');
         };
 
-        // Mouse enter handler for interactive elements
         const handleMouseEnter = () => {
             ring.classList.add('hover');
         };
 
-        // Mouse leave handler for interactive elements
         const handleMouseLeave = () => {
             ring.classList.remove('hover');
         };
 
-        // Add event listeners
         document.addEventListener('mousemove', handleMouseMove);
         document.addEventListener('mousedown', handleMouseDown);
         document.addEventListener('mouseup', handleMouseUp);
 
-        // Add hover effects to interactive elements
         const interactiveElements = document.querySelectorAll(
             'a, button, input, textarea, select, [role="button"], .cursor-pointer'
         );
@@ -74,10 +65,8 @@ export default function CustomCursor() {
             el.addEventListener('mouseleave', handleMouseLeave);
         });
 
-        // Start ring animation
         animateRing();
 
-        // Cleanup
         return () => {
             document.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('mousedown', handleMouseDown);
@@ -90,7 +79,6 @@ export default function CustomCursor() {
         };
     }, []);
 
-    // Don't render on mobile devices
     useEffect(() => {
         const isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
         if (isMobile) {

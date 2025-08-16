@@ -18,6 +18,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         const stored = localStorage.getItem("theme") as Theme;
+
         if (stored) {
             setTheme(stored);
         }
@@ -29,6 +30,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         if (theme === "system") {
             const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
             setResolvedTheme(systemTheme);
+
             root.classList.remove("light", "dark");
             root.classList.add(systemTheme);
         } else {
@@ -42,10 +44,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
         const handleChange = () => {
             if (theme === "system") {
                 const systemTheme = mediaQuery.matches ? "dark" : "light";
                 setResolvedTheme(systemTheme);
+
                 const root = window.document.documentElement;
                 root.classList.remove("light", "dark");
                 root.classList.add(systemTheme);
@@ -65,8 +69,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
 export function useTheme() {
     const context = useContext(ThemeContext);
+
     if (context === undefined) {
         throw new Error("useTheme must be used within a ThemeProvider");
     }
+
     return context;
 } 

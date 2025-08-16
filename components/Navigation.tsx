@@ -59,7 +59,6 @@ export default function Navigation() {
                         <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
                     </Link>
 
-                    {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-1">
                         {navItems.map((item) => (
                             <Link
@@ -78,7 +77,6 @@ export default function Navigation() {
                             </Link>
                         ))}
 
-                        {/* CTA Button */}
                         <a
                             href="https://calendly.com/stoeva-gradev"
                             target="_blank"
@@ -99,7 +97,6 @@ export default function Navigation() {
                         </div>
                     </div>
 
-                    {/* Mobile Menu Button */}
                     <div className="md:hidden flex items-center space-x-3">
                         <ThemeToggle />
                         <button
@@ -119,7 +116,6 @@ export default function Navigation() {
                     </div>
                 </div>
 
-                {/* Mobile Menu */}
                 <div className={`md:hidden transition-all duration-300 ease-in-out ${mobileMenuOpen
                     ? "max-h-96 opacity-100"
                     : "max-h-0 opacity-0 pointer-events-none"
@@ -146,7 +142,6 @@ export default function Navigation() {
                             </Link>
                         ))}
 
-                        {/* Mobile CTA Button */}
                         <div className="pt-4 mt-4 border-t border-border/20">
                             <a
                                 href="https://calendly.com/stoeva-gradev"

@@ -6,7 +6,7 @@ export default function CalendlyCTA() {
     const [isHovered, setIsHovered] = useState(false);
 
     const openCalendly = () => {
-        window.open("https://calendly.com/your-calendly-link", "_blank");
+        window.open("https://calendly.com/stoeva-gradev", "_blank");
     };
 
     return (

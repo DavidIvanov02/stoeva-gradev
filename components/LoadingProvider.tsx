@@ -29,11 +29,9 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
     const [loadingTimeouts, setLoadingTimeouts] = useState<NodeJS.Timeout[]>([]);
     const pathname = usePathname();
 
-    // Auto-loading on route changes
     useEffect(() => {
         startLoading();
 
-        // Stop loading after a short delay (simulating page load)
         const timeout = setTimeout(() => {
             stopLoading();
         }, 800);
@@ -48,7 +46,6 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
     };
 
     const stopLoading = () => {
-        // Clear any existing timeouts
         loadingTimeouts.forEach(timeout => clearTimeout(timeout));
         setLoadingTimeouts([]);
 

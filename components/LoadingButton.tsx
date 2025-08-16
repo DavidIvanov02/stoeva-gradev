@@ -10,7 +10,7 @@ interface LoadingButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
     loadingText?: string;
     variant?: 'primary' | 'secondary' | 'outline';
     size?: 'sm' | 'md' | 'lg';
-    showGlobalLoading?: boolean; // Whether to show the global loading overlay
+    showGlobalLoading?: boolean; 
 }
 
 const LoadingButton: React.FC<LoadingButtonProps> = ({

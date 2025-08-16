@@ -8,11 +8,9 @@ const LoadingExamples: React.FC = () => {
     const { withLoading, handleApiCall, startLoading, stopLoading } = useLoadingHelpers();
     const [buttonLoading, setButtonLoading] = useState(false);
 
-    // Example: API call with loading
     const handleApiExample = async () => {
         try {
             const result = await handleApiCall(async () => {
-                // Simulate API call
                 await new Promise(resolve => setTimeout(resolve, 2000));
                 return { data: 'API response' };
             });
@@ -22,12 +20,11 @@ const LoadingExamples: React.FC = () => {
         }
     };
 
-    // Example: Form submission with loading
     const handleFormExample = async () => {
         setButtonLoading(true);
+
         try {
             await withLoading(async () => {
-                // Simulate form submission
                 await new Promise(resolve => setTimeout(resolve, 1500));
                 console.log('Form submitted successfully');
             }, { minDuration: 500 });
@@ -36,7 +33,6 @@ const LoadingExamples: React.FC = () => {
         }
     };
 
-    // Example: Manual loading control
     const handleManualLoading = () => {
         startLoading();
         setTimeout(() => {
@@ -44,9 +40,7 @@ const LoadingExamples: React.FC = () => {
         }, 3000);
     };
 
-    // Example: Async button action
     const handleAsyncButtonAction = async () => {
-        // Simulate async operation
         await new Promise(resolve => setTimeout(resolve, 2000));
         console.log('Async action completed');
     };
