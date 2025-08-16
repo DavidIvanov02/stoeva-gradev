@@ -40,7 +40,7 @@ export interface BlogPostMetadata {
  * Get the posts directory path
  */
 const getPostsDirectory = () => {
-    return path.join(process.cwd(), 'posts');
+    return path.join(process.cwd(), 'content', 'posts');
 };
 
 /**
@@ -76,7 +76,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
         const { data, content } = matter(fileContents);
         
         // Parse markdown to HTML
-        const htmlContent = marked(content);
+        const htmlContent = marked.parse(content, { async: false }) as string;
         
         // Validate required frontmatter fields
         const metadata = data as BlogPostMetadata;
