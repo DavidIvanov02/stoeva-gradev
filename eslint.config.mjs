@@ -60,6 +60,20 @@ const eslintConfig = [
       "import/newline-after-import": "error",    // Require newline after imports
       "import/no-duplicates": "error",           // Prevent duplicate imports
       "import/no-unresolved": "off",             // Turn off as Next.js handles this
+      "import/no-relative-packages": "error",    // Prevent relative imports of packages
+      "import/no-relative-parent-imports": "error", // Prevent relative imports from parent directories
+      // Custom rule to prevent all relative imports (forces absolute paths)
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["../*", "./*"],
+              message: "Use absolute imports instead of relative imports. Use '@/' prefix for internal modules."
+            }
+          ]
+        }
+      ],
     },
     settings: {
       "import/resolver": {
