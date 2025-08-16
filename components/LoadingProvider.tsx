@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 
 import { usePathname } from 'next/navigation';
 
@@ -27,7 +27,7 @@ interface LoadingProviderProps {
 
 export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [loadingTimeouts, setLoadingTimeouts] = useState<NodeJS.Timeout[]>([]);
+  const loadingTimeoutsRef = useRef<NodeJS.Timeout[]>([]);
   const pathname = usePathname();
 
   const startLoading = useCallback(() => {
@@ -35,11 +35,10 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
   }, []);
 
   const stopLoading = useCallback(() => {
-    loadingTimeouts.forEach(timeout => clearTimeout(timeout));
-    setLoadingTimeouts([]);
-
+    loadingTimeoutsRef.current.forEach(timeout => clearTimeout(timeout));
+    loadingTimeoutsRef.current = [];
     setIsLoading(false);
-  }, [loadingTimeouts]);
+  }, []);
 
   useEffect(() => {
     startLoading();
