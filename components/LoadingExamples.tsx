@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useLoadingHelpers } from './useLoadingHelpers';
+
+import { useLoadingHelpers } from '@/utils/useLoadingHelpers';
+
 import LoadingButton from './LoadingButton';
 
 const LoadingExamples: React.FC = () => {

@@ -1,7 +1,8 @@
 "use client";
 
 import React from 'react';
-import { useLoadingHelpers } from './useLoadingHelpers';
+
+import { useLoadingHelpers } from '@/utils/useLoadingHelpers';
 
 interface LoadingButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
@@ -10,7 +11,7 @@ interface LoadingButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
     loadingText?: string;
     variant?: 'primary' | 'secondary' | 'outline';
     size?: 'sm' | 'md' | 'lg';
-    showGlobalLoading?: boolean; 
+    showGlobalLoading?: boolean;
 }
 
 const LoadingButton: React.FC<LoadingButtonProps> = ({
