@@ -1,8 +1,7 @@
 "use client";
 
 import { useCallback } from 'react';
-
-import { useLoading } from './LoadingProvider';
+import { useLoading } from '@/components/LoadingProvider';
 
 /**
  * Custom hook that provides loading helpers for common scenarios

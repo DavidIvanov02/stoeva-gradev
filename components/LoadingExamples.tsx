@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-import { useLoadingHelpers } from '@/utils/useLoadingHelpers';
+import { useLoadingHelpers } from '@/hooks/useLoadingHelpers';
 
 import LoadingButton from './LoadingButton';
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { useLoadingHelpers } from '@/utils/useLoadingHelpers';
+import { useLoadingHelpers } from '@/hooks/useLoadingHelpers';
 
 interface LoadingButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;

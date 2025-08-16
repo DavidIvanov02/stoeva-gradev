@@ -1,100 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
-const blogPosts = [
-    {
-        id: 1,
-        title: "The Future of Brand Identity Design",
-        slug: "future-of-brand-identity-design",
-        excerpt: "Exploring emerging trends and technologies that are reshaping how we approach brand identity design in the digital age.",
-        content: `
-      <p>Brand identity design is evolving at an unprecedented pace, driven by technological advances and changing consumer expectations. As we look toward the future, several key trends are emerging that will fundamentally reshape how we approach brand identity design.</p>
-
-      <h2>The Rise of Dynamic Identities</h2>
-      <p>Gone are the days when a brand identity consisted of a single, static logo. Today's most innovative brands are embracing dynamic identity systems that can adapt and evolve across different contexts and platforms. These flexible systems maintain brand consistency while allowing for creative expression and contextual relevance.</p>
-
-      <h2>Technology-Driven Design</h2>
-      <p>Artificial intelligence and machine learning are beginning to play significant roles in brand identity design. From automated logo generation to data-driven color palette selection, technology is becoming an invaluable tool for designers. However, the human touch remains irreplaceable when it comes to strategic thinking and emotional connection.</p>
-
-      <h2>Sustainability and Purpose</h2>
-      <p>Modern consumers increasingly expect brands to stand for something beyond profit. This shift is driving the creation of identity systems that communicate values, sustainability efforts, and social responsibility. Designers must now consider not just how a brand looks, but what it represents.</p>
-
-      <h2>Cross-Platform Consistency</h2>
-      <p>With the proliferation of digital touchpoints, maintaining brand consistency across platforms has become more challenging and more important than ever. Future brand identity systems must be designed with flexibility in mind, ensuring they work seamlessly across everything from social media to augmented reality experiences.</p>
-
-      <p>The future of brand identity design is bright, filled with opportunities for innovation and meaningful connection. As designers, our role is to embrace these changes while never losing sight of the fundamental principles that make great design timeless.</p>
-    `,
-        author: "Stoeva Gradev",
-        date: "2024-01-15",
-        readTime: "5 min read",
-        category: "Branding",
-        tags: ["Design", "Branding", "Trends"],
-        image: "/api/placeholder/800/400",
-        featured: true
-    },
-    {
-        id: 2,
-        title: "10 Web Design Principles for Better User Experience",
-        slug: "web-design-principles-user-experience",
-        excerpt: "Essential principles every designer should know to create websites that not only look great but also provide exceptional user experiences.",
-        content: `
-      <p>Creating exceptional user experiences requires more than just beautiful visuals. It demands a deep understanding of user behavior, accessibility principles, and design psychology. Here are ten fundamental principles that every web designer should master.</p>
-
-      <h2>1. Clarity is King</h2>
-      <p>Your website should communicate its purpose within seconds of a user landing on it. Clear navigation, obvious calls-to-action, and intuitive layout are essential for user comprehension.</p>
-
-      <h2>2. Consistency Builds Trust</h2>
-      <p>Consistent design patterns, color schemes, and typography create a cohesive experience that users can rely on. When users know what to expect, they feel more confident navigating your site.</p>
-
-      <h2>3. Mobile-First Approach</h2>
-      <p>With mobile traffic dominating web usage, designing for mobile devices first ensures your site works well on all screen sizes. This approach forces you to prioritize content and functionality.</p>
-
-      <h2>4. Loading Speed Matters</h2>
-      <p>Users expect fast-loading websites. Optimize images, minimize code, and use efficient hosting to ensure your site loads quickly across all devices and connection speeds.</p>
-
-      <h2>5. Accessibility for All</h2>
-      <p>Design with accessibility in mind from the start. Use proper contrast ratios, alt text for images, and keyboard navigation support to ensure your site is usable by everyone.</p>
-
-      <p>These principles form the foundation of great web design. By implementing them consistently, you'll create websites that not only look beautiful but also provide exceptional user experiences that drive results.</p>
-    `,
-        author: "Stoeva Gradev",
-        date: "2024-01-10",
-        readTime: "8 min read",
-        category: "Web Design",
-        tags: ["UX", "Web Design", "Principles"],
-        image: "/api/placeholder/800/400",
-        featured: true
-    },
-    {
-        id: 3,
-        title: "Color Psychology in Print Design",
-        slug: "color-psychology-print-design",
-        excerpt: "Understanding how colors influence emotions and decision-making in print materials, and how to use this knowledge effectively.",
-        content: `
-      <p>Color is one of the most powerful tools in a designer's arsenal, especially in print design where the tactile experience amplifies visual impact. Understanding color psychology can dramatically improve the effectiveness of your print materials.</p>
-
-      <h2>The Science Behind Color Perception</h2>
-      <p>Colors trigger emotional and psychological responses that are both universal and culturally specific. Red can evoke passion and urgency, while blue often conveys trust and stability. These associations aren't arbitrary—they're rooted in human psychology and cultural conditioning.</p>
-
-      <h2>Strategic Color Application</h2>
-      <p>In print design, color choices should align with your message and audience. A financial services brochure might use blues and grays to convey trustworthiness, while a children's book might employ bright, playful colors to capture attention and spark imagination.</p>
-
-      <h2>Print-Specific Considerations</h2>
-      <p>Print design presents unique challenges and opportunities for color use. Unlike digital displays, print colors are created through ink combinations, which can produce rich, saturated results that feel more permanent and substantial than their digital counterparts.</p>
-
-      <p>Mastering color psychology in print design requires both technical knowledge and intuitive understanding of human behavior. When used strategically, color becomes a powerful communication tool that enhances your message and connects with your audience on an emotional level.</p>
-    `,
-        author: "Stoeva Gradev",
-        date: "2024-01-05",
-        readTime: "6 min read",
-        category: "Print Design",
-        tags: ["Color", "Psychology", "Print"],
-        image: "/api/placeholder/800/400",
-        featured: false
-    }
-];
+import { getPostBySlug, getRelatedPosts, getAllPostSlugs } from "@/utils/markdownParser";
 
 interface BlogPostPageProps {
     params: {
@@ -102,16 +8,22 @@ interface BlogPostPageProps {
     };
 }
 
+// Generate static params for all blog posts
+export function generateStaticParams() {
+    const slugs = getAllPostSlugs();
+    return slugs.map((slug) => ({
+        slug: slug,
+    }));
+}
+
 export default function BlogPost({ params }: BlogPostPageProps) {
-    const post = blogPosts.find(p => p.slug === params.slug);
+    const post = getPostBySlug(params.slug);
 
     if (!post) {
         notFound();
     }
 
-    const relatedPosts = blogPosts
-        .filter(p => p.category === post.category && p.id !== post.id)
-        .slice(0, 3);
+    const relatedPosts = getRelatedPosts(params.slug, post.category, 3);
 
     const formatDate = (dateString: string) => {
         const date = new Date(dateString);
@@ -188,14 +100,9 @@ export default function BlogPost({ params }: BlogPostPageProps) {
 
             <article className="py-16 bg-background">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="prose prose-lg max-w-none">
+                    <div className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-secondary prose-strong:text-foreground prose-li:text-secondary prose-a:text-primary hover:prose-a:text-blue-600">
                         <div
-                            className="text-secondary leading-relaxed"
                             dangerouslySetInnerHTML={{ __html: post.content }}
-                            style={{
-                                fontSize: '1.125rem',
-                                lineHeight: '1.75'
-                            }}
                         />
                     </div>
 
@@ -314,4 +221,4 @@ export default function BlogPost({ params }: BlogPostPageProps) {
             </section>
         </div>
     );
-} 
+}
