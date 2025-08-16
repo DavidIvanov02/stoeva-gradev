@@ -101,7 +101,6 @@ export default function Testimonials() {
 
     return (
         <div className="min-h-screen bg-background">
-            {/* Hero Section */}
             <section className="py-20 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-primary">
@@ -113,7 +112,6 @@ export default function Testimonials() {
                 </div>
             </section>
 
-            {/* Stats Section */}
             <section className="py-16 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -128,7 +126,6 @@ export default function Testimonials() {
                 </div>
             </section>
 
-            {/* Filter Section */}
             <section className="py-8 bg-muted">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-wrap justify-center gap-4">
@@ -153,7 +150,6 @@ export default function Testimonials() {
                 </div>
             </section>
 
-            {/* Testimonials Grid */}
             <section className="py-20 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -162,24 +158,20 @@ export default function Testimonials() {
                                 key={testimonial.id}
                                 className="bg-muted p-8 rounded-2xl hover-lift transition-all duration-300 hover:shadow-xl"
                             >
-                                {/* Rating */}
                                 <div className="flex items-center mb-4">
                                     {renderStars(testimonial.rating)}
                                 </div>
 
-                                {/* Testimonial Text */}
                                 <blockquote className="text-secondary mb-6 leading-relaxed">
                                     &ldquo;{testimonial.text}&rdquo;
                                 </blockquote>
 
-                                {/* Project Info */}
                                 <div className="mb-6">
                                     <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
                                         {testimonial.project}
                                     </div>
                                 </div>
 
-                                {/* Client Info */}
                                 <div className="flex items-center">
                                     <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
                                         {testimonial.name.charAt(0)}
@@ -197,7 +189,6 @@ export default function Testimonials() {
                 </div>
             </section>
 
-            {/* Featured Testimonial */}
             <section className="py-20 bg-muted">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <div className="bg-background p-8 md:p-12 rounded-3xl shadow-xl">
@@ -220,7 +211,6 @@ export default function Testimonials() {
                 </div>
             </section>
 
-            {/* Process Section */}
             <section className="py-20 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
@@ -231,7 +221,6 @@ export default function Testimonials() {
                             Our commitment to excellence and client satisfaction sets us apart
                         </p>
                     </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div className="text-center">
                             <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center text-white mb-6 mx-auto">
@@ -244,7 +233,6 @@ export default function Testimonials() {
                                 We deliver high-quality results on time, every time, without compromising on excellence.
                             </p>
                         </div>
-
                         <div className="text-center">
                             <div className="w-16 h-16 bg-accent rounded-xl flex items-center justify-center text-white mb-6 mx-auto">
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -256,7 +244,6 @@ export default function Testimonials() {
                                 Every project receives personalized attention and care, ensuring unique solutions for each client.
                             </p>
                         </div>
-
                         <div className="text-center">
                             <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center text-white mb-6 mx-auto">
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -272,7 +259,6 @@ export default function Testimonials() {
                 </div>
             </section>
 
-            {/* CTA Section */}
             <section className="py-20 bg-muted">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-4xl md:text-5xl font-serif mb-6 text-foreground">

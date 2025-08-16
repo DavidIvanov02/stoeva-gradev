@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-// This would typically come from a CMS or database
 const blogPosts = [
     {
         id: 1,
@@ -110,7 +109,6 @@ export default function BlogPost({ params }: BlogPostPageProps) {
         notFound();
     }
 
-    // Get related posts (same category, excluding current post)
     const relatedPosts = blogPosts
         .filter(p => p.category === post.category && p.id !== post.id)
         .slice(0, 3);
@@ -126,10 +124,8 @@ export default function BlogPost({ params }: BlogPostPageProps) {
 
     return (
         <div className="min-h-screen bg-background">
-            {/* Hero Section */}
             <section className="py-20 bg-background">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {/* Breadcrumb */}
                     <nav className="mb-8">
                         <ol className="flex items-center space-x-2 text-sm text-secondary">
                             <li>
@@ -175,7 +171,6 @@ export default function BlogPost({ params }: BlogPostPageProps) {
                 </div>
             </section>
 
-            {/* Featured Image */}
             <section className="py-8 bg-background">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="aspect-video bg-muted rounded-2xl overflow-hidden shadow-xl">
@@ -191,7 +186,6 @@ export default function BlogPost({ params }: BlogPostPageProps) {
                 </div>
             </section>
 
-            {/* Article Content */}
             <article className="py-16 bg-background">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="prose prose-lg max-w-none">
@@ -205,7 +199,6 @@ export default function BlogPost({ params }: BlogPostPageProps) {
                         />
                     </div>
 
-                    {/* Tags */}
                     <div className="mt-12 pt-8 border-t border-gray-200 dark:border-slate-700">
                         <div className="flex flex-wrap gap-2">
                             {post.tags.map((tag) => (
@@ -219,7 +212,6 @@ export default function BlogPost({ params }: BlogPostPageProps) {
                         </div>
                     </div>
 
-                    {/* Share Section */}
                     <div className="mt-8 pt-8 border-t border-gray-200 dark:border-slate-700">
                         <div className="flex items-center justify-between">
                             <h3 className="text-lg font-semibold text-foreground">Share this article</h3>
@@ -245,7 +237,6 @@ export default function BlogPost({ params }: BlogPostPageProps) {
                 </div>
             </article>
 
-            {/* Related Posts */}
             {relatedPosts.length > 0 && (
                 <section className="py-20 bg-muted">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

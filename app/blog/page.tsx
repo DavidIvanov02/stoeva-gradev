@@ -113,7 +113,6 @@ export default function Blog() {
 
     return (
         <div className="min-h-screen bg-background">
-            {/* Hero Section */}
             <section className="py-20 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-primary">
@@ -125,7 +124,6 @@ export default function Blog() {
                 </div>
             </section>
 
-            {/* Featured Posts */}
             {featuredPosts.length > 0 && (
                 <section className="py-20 bg-background">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -179,7 +177,6 @@ export default function Blog() {
                 </section>
             )}
 
-            {/* Category Filter */}
             <section className="py-8 bg-muted">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-wrap justify-center gap-4">
@@ -199,7 +196,6 @@ export default function Blog() {
                 </div>
             </section>
 
-            {/* Blog Posts Grid */}
             <section className="py-20 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {regularPosts.length > 0 ? (
@@ -256,7 +252,6 @@ export default function Blog() {
                 </div>
             </section>
 
-            {/* Newsletter Section */}
             <section className="py-20 bg-muted">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <div className="bg-background p-8 md:p-12 rounded-3xl shadow-xl">
@@ -280,7 +275,6 @@ export default function Blog() {
                 </div>
             </section>
 
-            {/* CTA Section */}
             <section className="py-20 bg-background">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-4xl md:text-5xl font-serif mb-6 text-foreground">

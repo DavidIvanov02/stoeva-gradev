@@ -12,7 +12,6 @@ export default function NotFound() {
     useEffect(() => {
         setMounted(true);
 
-        // Auto redirect countdown
         const timer = setInterval(() => {
             setCountdown((prev) => {
                 if (prev <= 1) {
@@ -43,17 +42,13 @@ export default function NotFound() {
 
     return (
         <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden">
-            {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
                 {floatingElements}
-
-                {/* Large decorative circles */}
                 <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
 
             <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-                {/* 404 Number */}
                 <div className="relative mb-8">
                     <h1 className="text-8xl sm:text-9xl lg:text-[12rem] font-bold text-primary animate-pulse">
                         404
@@ -63,7 +58,6 @@ export default function NotFound() {
                     </div>
                 </div>
 
-                {/* Main Content */}
                 <div className="space-y-6 mb-12">
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
                         Oops! Page Not Found
@@ -74,7 +68,6 @@ export default function NotFound() {
                         Don&apos;t worry, even the best explorers sometimes take a wrong turn!
                     </p>
 
-                    {/* Fun animated icon */}
                     <div className="flex justify-center my-8">
                         <div className="relative">
                             <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center animate-bounce">
@@ -87,7 +80,6 @@ export default function NotFound() {
                     </div>
                 </div>
 
-                {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                     <Link
                         href="/"
@@ -115,7 +107,6 @@ export default function NotFound() {
                     </button>
                 </div>
 
-                {/* Quick Navigation */}
                 <div className="bg-background/50 backdrop-blur-lg rounded-2xl p-6 border border-border/20 shadow-xl">
                     <h3 className="text-lg font-semibold text-foreground mb-4">
                         Or explore these popular pages:
@@ -146,7 +137,6 @@ export default function NotFound() {
                     </div>
                 </div>
 
-                {/* Auto-redirect notice */}
                 <div className="mt-8 text-sm text-foreground/50">
                     <p>
                         Automatically redirecting to home in{" "}

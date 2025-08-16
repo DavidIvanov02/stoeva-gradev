@@ -5,7 +5,6 @@ import Link from "next/link";
 export default function TermsOfService() {
     return (
         <div className="min-h-screen bg-background">
-            {/* Hero Section */}
             <section className="py-20 bg-muted/20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-5xl md:text-6xl font-serif mb-6 text-primary">
@@ -23,13 +22,9 @@ export default function TermsOfService() {
                     </div>
                 </div>
             </section>
-
-            {/* Content Section */}
             <section className="py-16">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="prose prose-lg max-w-none">
-
-                        {/* Agreement to Terms */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Agreement to Terms</h2>
                             <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-8 rounded-2xl border border-primary/10">
@@ -47,8 +42,6 @@ export default function TermsOfService() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Services Description */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Our Services</h2>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -87,8 +80,6 @@ export default function TermsOfService() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Client Responsibilities */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Client Responsibilities</h2>
                             <div className="bg-muted p-8 rounded-2xl">
@@ -169,8 +160,6 @@ export default function TermsOfService() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Payment Terms */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Payment Terms</h2>
                             <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-2xl border border-primary/10">
@@ -212,8 +201,6 @@ export default function TermsOfService() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Intellectual Property */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Intellectual Property</h2>
                             <div className="bg-muted p-8 rounded-2xl">
@@ -246,8 +233,6 @@ export default function TermsOfService() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Revisions and Changes */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Revisions and Changes</h2>
                             <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-8 rounded-2xl border border-primary/10">
@@ -280,8 +265,6 @@ export default function TermsOfService() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Limitation of Liability */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Limitation of Liability</h2>
                             <div className="bg-muted p-8 rounded-2xl">
@@ -311,8 +294,6 @@ export default function TermsOfService() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Termination */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Project Termination</h2>
                             <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-2xl border border-primary/10">
@@ -354,8 +335,6 @@ export default function TermsOfService() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Contact Information */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Questions About These Terms?</h2>
                             <div className="bg-muted/50 p-8 rounded-2xl border border-primary/20">
@@ -389,12 +368,9 @@ export default function TermsOfService() {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
-
-            {/* Call to Action */}
             <section className="py-16 bg-primary">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-serif mb-4 text-white">

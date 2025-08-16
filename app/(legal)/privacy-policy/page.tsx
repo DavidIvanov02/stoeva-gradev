@@ -5,7 +5,6 @@ import Link from "next/link";
 export default function PrivacyPolicy() {
     return (
         <div className="min-h-screen bg-background">
-            {/* Hero Section */}
             <section className="py-20 bg-muted/20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-5xl md:text-6xl font-serif mb-6 text-primary">
@@ -24,12 +23,9 @@ export default function PrivacyPolicy() {
                 </div>
             </section>
 
-            {/* Content Section */}
             <section className="py-16">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="prose prose-lg max-w-none">
-
-                        {/* Information We Collect */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Information We Collect</h2>
                             <div className="bg-muted p-8 rounded-2xl mb-6">
@@ -58,8 +54,6 @@ export default function PrivacyPolicy() {
                                 </ul>
                             </div>
                         </div>
-
-                        {/* How We Use Information */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">How We Use Your Information</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -89,8 +83,6 @@ export default function PrivacyPolicy() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Information Sharing */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Information Sharing</h2>
                             <div className="bg-muted/30 p-8 rounded-2xl border border-primary/10">
@@ -105,8 +97,6 @@ export default function PrivacyPolicy() {
                                 </ul>
                             </div>
                         </div>
-
-                        {/* Data Security */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Data Security</h2>
                             <div className="bg-muted p-8 rounded-2xl">
@@ -144,8 +134,6 @@ export default function PrivacyPolicy() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Your Rights */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Your Rights</h2>
                             <div className="bg-muted/30 p-8 rounded-2xl">
@@ -200,8 +188,6 @@ export default function PrivacyPolicy() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Cookies */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Cookies and Tracking</h2>
                             <div className="bg-muted p-8 rounded-2xl">
@@ -219,8 +205,6 @@ export default function PrivacyPolicy() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Contact Information */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Contact Us</h2>
                             <div className="bg-muted/50 p-8 rounded-2xl border border-primary/20">
@@ -254,8 +238,6 @@ export default function PrivacyPolicy() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Updates */}
                         <div className="mb-12">
                             <h2 className="text-3xl font-serif mb-6 text-foreground">Policy Updates</h2>
                             <div className="bg-muted p-8 rounded-2xl">
@@ -276,8 +258,6 @@ export default function PrivacyPolicy() {
                     </div>
                 </div>
             </section>
-
-            {/* Call to Action */}
             <section className="py-16 bg-primary">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl font-serif mb-4 text-white">
