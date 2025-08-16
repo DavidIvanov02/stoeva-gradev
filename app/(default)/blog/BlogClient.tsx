@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import type { BlogPost } from "@/utils/markdownParser";
+import type { BlogPost } from "@/types/blog";
 
 interface BlogClientProps {
     initialPosts: BlogPost[];
