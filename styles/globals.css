@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff9f1;
+  --foreground: #2d2520;
+  --primary: #bfad99;
+  --secondary: #d5cbc1;
+  --accent: #bfad99;
+  --muted: #f0e5d4;
+  --border: #d5cbc1;
+}
+
+.dark {
+  --background: #2d2520;
+  --foreground: #fff9f1;
+  --primary: #bfad99;
+  --secondary: #d5cbc1;
+  --accent: #f0e5d4;
+  --muted: #3a332c;
+  --border: #bfad99;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #2d2520;
+    --foreground: #fff9f1;
+    --primary: #bfad99;
+    --secondary: #d5cbc1;
+    --accent: #f0e5d4;
+    --muted: #3a332c;
+    --border: #bfad99;
+  }
+}
+
+/* Custom Cursor */
+* {
+  cursor: none;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.cursor-ring.hover {
+  transform: scale(1.5);
+  border-color: var(--accent);
+  opacity: 0.8;
+}
+
+.cursor-ring.click {
+  transform: scale(0.8);
+  border-color: var(--accent);
+}
+
+/* Cursor hover states for interactive elements */
+a,
+button,
+input,
+textarea,
+select,
+[role="button"],
+.cursor-pointer {
+  cursor: none !important;
+}
+
+a:hover ~ .cursor-ring,
+button:hover ~ .cursor-ring,
+input:hover ~ .cursor-ring,
+textarea:hover ~ .cursor-ring,
+select:hover ~ .cursor-ring,
+[role="button"]:hover ~ .cursor-ring,
+.cursor-pointer:hover ~ .cursor-ring {
+  transform: scale(1.5);
+  border-color: var(--accent);
+  opacity: 0.8;
+}
+
+/* Hide cursor on mobile devices */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-playfair), serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.text-gradient {
+  color: var(--primary);
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dark .hover-lift:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.calendly-cta {
+  background: var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.calendly-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: left 0.5s;
+}
+
+.calendly-cta:hover::before {
+  left: 100%;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Loading animations */
+.animation-delay-75 {
+  animation-delay: 75ms;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-150 {
+  animation-delay: 150ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-reverse {
+  animation-direction: reverse;
+}
+
+.animate-loading-bar {
+  animation: loadingBar 2s ease-in-out infinite;
+}
+
+@keyframes loadingBar {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
