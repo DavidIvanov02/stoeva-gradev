@@ -12,6 +12,7 @@ interface BlogPostPageProps {
 // Generate static params for all blog posts
 export function generateStaticParams() {
   const slugs = getAllPostSlugs();
+
   return slugs.map(slug => ({
     slug: slug,
   }));

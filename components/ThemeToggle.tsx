@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { useTheme } from './ThemeProvider';
+import { useTheme } from '@/components/ThemeProvider';
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -43,9 +43,8 @@ export default function ThemeToggle() {
                 setTheme(themeOption.value as any);
                 setIsOpen(false);
               }}
-              className={`w-full flex items-center space-x-2 px-3 py-2 text-left hover:bg-muted transition-colors first:rounded-t-lg last:rounded-b-lg ${
-                theme === themeOption.value ? 'bg-primary/10 text-primary' : 'text-foreground'
-              }`}
+              className={`w-full flex items-center space-x-2 px-3 py-2 text-left hover:bg-muted transition-colors first:rounded-t-lg last:rounded-b-lg ${theme === themeOption.value ? 'bg-primary/10 text-primary' : 'text-foreground'
+                }`}
             >
               <span>{themeOption.icon}</span>
               <span className='text-sm'>{themeOption.label}</span>

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,11 +36,10 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
+        ? 'bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg'
+        : 'bg-transparent'
+        }`}
     >
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex justify-between items-center h-16'>
@@ -64,11 +63,10 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 group ${
-                  isActive(item.href)
-                    ? 'text-primary bg-primary/10'
-                    : 'text-foreground/80 hover:text-primary hover:bg-primary/5'
-                }`}
+                className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 group ${isActive(item.href)
+                  ? 'text-primary bg-primary/10'
+                  : 'text-foreground/80 hover:text-primary hover:bg-primary/5'
+                  }`}
               >
                 {item.label}
                 {isActive(item.href) && (
@@ -117,19 +115,16 @@ export default function Navigation() {
             >
               <div className='w-6 h-6 flex flex-col justify-center items-center'>
                 <span
-                  className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                    mobileMenuOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-1'
-                  }`}
+                  className={`block w-5 h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-1'
+                    }`}
                 ></span>
                 <span
-                  className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                    mobileMenuOpen ? 'opacity-0' : 'opacity-100'
-                  }`}
+                  className={`block w-5 h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'
+                    }`}
                 ></span>
                 <span
-                  className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                    mobileMenuOpen ? '-rotate-45 -translate-y-0.5' : 'translate-y-1'
-                  }`}
+                  className={`block w-5 h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-0.5' : 'translate-y-1'
+                    }`}
                 ></span>
               </div>
             </button>
@@ -137,30 +132,27 @@ export default function Navigation() {
         </div>
 
         <div
-          className={`md:hidden transition-all duration-300 ease-in-out ${
-            mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
-          }`}
+          className={`md:hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+            }`}
         >
           <div className='px-2 pt-4 pb-6 space-y-2 bg-background/95 backdrop-blur-xl rounded-2xl mt-4 border border-border/20 shadow-xl'>
             {navItems.map((item, index) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 transform ${
-                  isActive(item.href)
-                    ? 'text-primary bg-primary/10 scale-105'
-                    : 'text-foreground/80 hover:text-primary hover:bg-primary/5 hover:scale-105'
-                } ${mobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+                className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 transform ${isActive(item.href)
+                  ? 'text-primary bg-primary/10 scale-105'
+                  : 'text-foreground/80 hover:text-primary hover:bg-primary/5 hover:scale-105'
+                  } ${mobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
                 style={{ transitionDelay: `${index * 50}ms` }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <div className='flex items-center space-x-3'>
                   <div
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      isActive(item.href)
-                        ? 'bg-primary scale-100'
-                        : 'bg-foreground/20 scale-0 group-hover:scale-100'
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${isActive(item.href)
+                      ? 'bg-primary scale-100'
+                      : 'bg-foreground/20 scale-0 group-hover:scale-100'
+                      }`}
                   ></div>
                   <span>{item.label}</span>
                 </div>
@@ -172,9 +164,8 @@ export default function Navigation() {
                 href='https://calendly.com/stoeva-gradev'
                 target='_blank'
                 rel='noopener noreferrer'
-                className={`block w-full px-4 py-3 bg-primary text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300 group relative overflow-hidden hover:bg-secondary ${
-                  mobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-                }`}
+                className={`block w-full px-4 py-3 bg-primary text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300 group relative overflow-hidden hover:bg-secondary ${mobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                  }`}
                 style={{ transitionDelay: `${navItems.length * 50}ms` }}
                 onClick={() => setMobileMenuOpen(false)}
               >

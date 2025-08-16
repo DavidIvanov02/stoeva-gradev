@@ -2,9 +2,8 @@
 
 import React, { useState } from 'react';
 
+import LoadingButton from '@/components/LoadingButton';
 import { useLoadingHelpers } from '@/hooks/useLoadingHelpers';
-
-import LoadingButton from './LoadingButton';
 
 const LoadingExamples: React.FC = () => {
   const { withLoading, handleApiCall, startLoading, stopLoading } = useLoadingHelpers();

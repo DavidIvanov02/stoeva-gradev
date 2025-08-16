@@ -100,11 +100,10 @@ export default function BlogPageContent({ initialPosts, initialCategories }: Blo
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeCategory === category
-                    ? 'bg-primary text-white shadow-lg'
-                    : 'bg-background text-secondary hover:bg-primary hover:text-white'
-                }`}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category
+                  ? 'bg-primary text-white shadow-lg'
+                  : 'bg-background text-secondary hover:bg-primary hover:text-white'
+                  }`}
               >
                 {category}
               </button>

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { useLoading } from './LoadingProvider';
+import { useLoading } from '@/components/LoadingProvider';
 
 const LoadingOverlay: React.FC = () => {
   const { isLoading } = useLoading();
