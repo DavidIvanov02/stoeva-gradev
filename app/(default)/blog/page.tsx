@@ -1,9 +1,9 @@
-import BlogClient from "./BlogClient";
+import BlogPageContent from "./BlogPageContent";
 import { getAllPosts, getAllCategories } from "@/utils/markdownParser";
 
 export default function Blog() {
     const allPosts = getAllPosts();
     const categories = getAllCategories();
 
-    return <BlogClient initialPosts={allPosts} initialCategories={categories} />;
+    return <BlogPageContent initialPosts={allPosts} initialCategories={categories} />;
 }

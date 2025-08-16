@@ -4,12 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 import type { BlogPost } from "@/types/blog";
 
-interface BlogClientProps {
+interface BlogPageContentProps {
     initialPosts: BlogPost[];
     initialCategories: string[];
 }
 
-export default function BlogClient({ initialPosts, initialCategories }: BlogClientProps) {
+export default function BlogPageContent({ initialPosts, initialCategories }: BlogPageContentProps) {
     const [activeCategory, setActiveCategory] = useState("All");
 
     const filteredPosts = activeCategory === "All"
