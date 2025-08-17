@@ -102,7 +102,7 @@ export default function PortfolioPageContent({ initialProjects, initialCategorie
                                 onClick={() => setActiveCategory(category)}
                                 className={`px-8 py-4 rounded-full font-medium transition-all duration-300 ${activeCategory === category
                                     ? 'bg-primary text-white shadow-lg'
-                                    : 'bg-white text-foreground hover:bg-primary hover:text-white'
+                                    : 'bg-background text-secondary hover:bg-primary hover:text-white'
                                     }`}
                             >
                                 {category}
