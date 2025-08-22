@@ -152,33 +152,36 @@ export default function Contact() {
                 <h3 className='text-xl font-serif mb-4 text-foreground'>Follow Us</h3>
                 <div className='flex space-x-4'>
                   <a
-                    href='https://linkedin.com'
+                    href='https://www.facebook.com/people/Stoeva-Gradev/61559740272482/'
                     target='_blank'
                     rel='noopener noreferrer'
                     className='w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
+                    aria-label='Facebook'
+                  >
+                    <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 24 24'>
+                      <path d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' />
+                    </svg>
+                  </a>
+                  <a
+                    href='https://www.instagram.com/stoeva.gradev/'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
+                    aria-label='Instagram'
+                  >
+                    <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 24 24'>
+                      <path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.44z' />
+                    </svg>
+                  </a>
+                  <a
+                    href='https://www.linkedin.com/company/stoeva-gradev-body-architect/'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
+                    aria-label='LinkedIn'
                   >
                     <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 24 24'>
                       <path d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' />
-                    </svg>
-                  </a>
-                  <a
-                    href='https://instagram.com'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
-                  >
-                    <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 24 24'>
-                      <path d='M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986s11.987-5.368 11.987-11.986C24.014 5.367 18.635.001 12.017.001zm5.568 16.791c-.001.232-.016.465-.049.695-.131 1.063-.652 1.609-1.554 1.731-.5.067-1.015.102-1.522.102-.507-.001-1.021-.035-1.522-.102-.902-.122-1.423-.668-1.554-1.731-.033-.23-.048-.463-.049-.695V7.209c.001-.232.016-.465.049-.695.131-1.064.652-1.609 1.554-1.731.501-.067 1.015-.102 1.522-.102.507.001 1.021.035 1.522.102.902.122 1.423.667 1.554 1.731.033.23.048.463.049.695v9.582z' />
-                    </svg>
-                  </a>
-                  <a
-                    href='https://behance.net'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors'
-                  >
-                    <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 24 24'>
-                      <path d='M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z' />
                     </svg>
                   </a>
                 </div>
@@ -309,45 +312,84 @@ export default function Contact() {
           <div className='space-y-6'>
             <div className='bg-background p-6 rounded-lg'>
               <h3 className='text-xl font-serif mb-3 text-foreground'>
-                How long does a typical project take?
+                1. What if I travel a lot or have an unpredictable schedule?
               </h3>
               <p className='text-secondary'>
-                Project timelines vary depending on scope and complexity. Brand identity projects
-                typically take 2-4 weeks, web design projects 4-8 weeks, and print design projects
-                1-2 weeks.
+                The program is flexible and can adapt to your lifestyle. Whether you travel often or
+                have a busy calendar, you will have the tools and guidance to stay consistent.
               </p>
             </div>
 
             <div className='bg-background p-6 rounded-lg'>
               <h3 className='text-xl font-serif mb-3 text-foreground'>
-                What&apos;s included in your design packages?
+                2. Will I need access to a gym or special equipment?
               </h3>
               <p className='text-secondary'>
-                Each package includes initial consultation, concept development, design iterations,
-                final files in multiple formats, and basic brand guidelines. Specific deliverables
-                vary by service type.
+                No gym is required. Workouts are designed to be done at home or in the gym,
+                depending on what fits your lifestyle best.
               </p>
             </div>
 
             <div className='bg-background p-6 rounded-lg'>
               <h3 className='text-xl font-serif mb-3 text-foreground'>
-                Do you work with international clients?
+                3. Can I still join if I have an injury or health condition?
               </h3>
               <p className='text-secondary'>
-                Yes! We work with clients worldwide. We&apos;re experienced in remote collaboration
-                and use modern tools to ensure smooth communication regardless of location or time
-                zone.
+                Yes. I will tailor your workouts and overall approach to support your healing and
+                help you move safely and effectively, working alongside your physician&apos;s guidance
+                when needed or through any notes and recommendations they provide.
               </p>
             </div>
 
             <div className='bg-background p-6 rounded-lg'>
               <h3 className='text-xl font-serif mb-3 text-foreground'>
-                What&apos;s your revision policy?
+                4. What if I am menopausal or perimenopausal?
               </h3>
               <p className='text-secondary'>
-                We include up to 3 rounds of revisions in our standard packages. Additional
-                revisions can be accommodated for an additional fee. We work closely with you to
-                ensure the final result exceeds your expectations.
+                The program is designed specifically for women 35 and up, including those in
+                menopause or perimenopause. It supports hormonal balance and fat loss with a
+                focus on metabolism, stress, and recovery.
+              </p>
+            </div>
+
+            <div className='bg-background p-6 rounded-lg'>
+              <h3 className='text-xl font-serif mb-3 text-foreground'>
+                5. Do I need to be in shape or have experience?
+              </h3>
+              <p className='text-secondary'>
+                Absolutely not. Everything is customized to your starting point.
+              </p>
+            </div>
+
+            <div className='bg-background p-6 rounded-lg'>
+              <h3 className='text-xl font-serif mb-3 text-foreground'>
+                6. What results can I expect, and how quickly?
+              </h3>
+              <p className='text-secondary'>
+                Clients begin noticing increased energy and better digestion within the first two
+                weeks. Visible changes often begin within the first month, with continued progress
+                over 12 to 24 weeks.
+              </p>
+            </div>
+
+            <div className='bg-background p-6 rounded-lg'>
+              <h3 className='text-xl font-serif mb-3 text-foreground'>
+                7. What if I have questions or get stuck?
+              </h3>
+              <p className='text-secondary'>
+                You will have direct access to me for questions, adjustments, and support. I am
+                here to guide you every step of the way.
+              </p>
+            </div>
+
+            <div className='bg-background p-6 rounded-lg'>
+              <h3 className='text-xl font-serif mb-3 text-foreground'>
+                8. What is the cost?
+              </h3>
+              <p className='text-secondary'>
+                The cost of the program will be discussed during your free consultation call, after
+                we have both agreed that this is the right fit. You will gain clarity on the value,
+                support, and results available to you before making any decision.
               </p>
             </div>
           </div>
